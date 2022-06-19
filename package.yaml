@@ -1,7 +1,7 @@
 name:                next
-version:             0.1.0.0
+version:             0.1.0
 github:              "sjpeterson/next"
-license:             BSD3
+license:             MIT
 author:              "Stefan Peterson"
 maintainer:          "stefan.j.peterson@gmail.com"
 copyright:           "2022 Stefan Peterson"
@@ -24,17 +24,21 @@ dependencies:
 
 library:
   source-dirs: src
+  ghc-options:
+    - -W
 
 executables:
-  next-exe:
+  nn:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
+    - -W
     dependencies:
     - next
+    - optparse-applicative
 
 tests:
   next-test:
